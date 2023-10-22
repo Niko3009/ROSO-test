@@ -1,0 +1,62 @@
+-var pageTitle = 'Заявка'
+
+doctype html
+html(lang="en")
+  head
+    title=pageTitle
+    include modules/meta
+
+  body
+    main
+      form.request
+
+        div.form_header
+          button.nav(onclick='goToCalculator()' type="button") ➜
+          div.title
+            label Оставьте заявку
+
+        div.form_data
+          div.form_inputs
+            div.inputBox
+              label(name="familyName") Фамилия
+              input(
+                placeholder='Фамилия'
+                type="text" 
+                name="familyName" 
+              )
+
+            div.inputBox
+              label(name="name") Имя
+              input(
+                placeholder='Имя'
+                type="text" 
+                name="name" 
+              )
+
+            div.inputBox
+              label(name="fatherName") Отчество
+              input(
+                placeholder='Отчество'
+                type="text" 
+                name="fatherName" 
+              )
+
+            div.inputBox
+              label(name="phone") Телефон
+              input(
+                placeholder='Телефон'
+                type="tel" 
+                name="phone" 
+              )
+
+            div.inputBox
+              label(name="e-mail") E-mail
+              input(
+                placeholder='E-mail'
+                type="text" 
+                name="e-mail" 
+              )
+
+        div.form_buttons
+          button(onclick="handleForm()" type="button") Отправить
+

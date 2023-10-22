@@ -1,0 +1,180 @@
+form {
+  width: 100%;
+  border-radius: 64px;
+  padding: 64px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+}
+
+form div {
+  width: 100%;
+}
+
+form div.form_header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+}
+
+form div.form_inputs .inputBox {
+  position: relative;
+}
+
+form div.form_inputs label {
+  position: absolute;
+  top: 4px;
+  left: 24px;
+  color: #6D6F92;
+  font-size: 12px;
+  font-weight: 400;
+  visibility: hidden;
+  -webkit-transition: all 0s;
+  transition: all 0s;
+}
+
+form div.form_inputs label.isActive {
+  visibility: visible;
+}
+
+form div.form_inputs label.isError {
+  color: #FF6767;
+}
+
+form.calculator div.form_data {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -webkit-column-gap: 16px;
+          column-gap: 16px;
+}
+
+form.calculator div.form_inputs {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+form.calculator div.form_calcResult {
+  width: 100%;
+  min-width: 280px;
+  padding: 24px 48px;
+  border-radius: 48px;
+  border: 3px solid;
+  border-color: #9A67FF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+}
+
+form.calculator div.form_calcResult h1 {
+  font-size: 16px;
+  font-weight: 800;
+  color: black;
+  margin: 0;
+}
+
+form.calculator div.form_calcResult h2 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 32px;
+  color: #9A67FF;
+  margin: 0;
+}
+
+form.request div.form_data {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+form.request div.form_inputs {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+@media (max-width: 768px) {
+  form {
+    gap: 24px;
+  }
+  form div {
+    width: 100%;
+  }
+  form.calculator div.form_data, form.request div.form_data {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+  }
+  form.calculator div.form_inputs, form.request div.form_inputs {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=form.css.map */

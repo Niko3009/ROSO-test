@@ -1,0 +1,57 @@
+-var pageTitle = 'Калькулятор'
+
+doctype html
+html(lang="en")
+  head
+    title=pageTitle
+    include modules/meta
+    
+  body
+    main
+      form.calculator
+
+        div.form_header
+          div.title
+            label Рассчитайте платеж
+
+        div.form_data
+          div.form_inputs
+            div.inputBox
+              label(name="creditSize") Сумма займа
+              input(
+                placeholder='Сумма займа'
+                type="number" 
+                name="creditSize" 
+              )
+
+            div.inputBox
+              label(name="initialPayment") Первоначальный взнос
+              input(
+                placeholder='Первоначальный взнос'
+                type="number" 
+                name="initialPayment" 
+              )
+
+            div.inputBox
+              label(name="creditRate") Процентная ставка
+              input(
+                placeholder='Процентная ставка'
+                type="number" 
+                name="creditRate" 
+              )
+
+            div.inputBox
+              label(name="creditPeriod") Срок кредитования
+              input(
+                placeholder='Срок кредитования'
+                type="number" 
+                name="creditPeriod" 
+              )
+
+          div.form_calcResult
+            h1 Ежемесячный платеж
+            h2 - ₽
+
+        div.form_buttons
+          button(onclick='goToRequest()' type="button" ) Оставить заявку
+
