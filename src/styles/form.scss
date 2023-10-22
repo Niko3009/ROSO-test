@@ -76,9 +76,7 @@ form {
         }
 
         &_calcResult {
-
             width: 100%;
-            min-width: 280px;
             padding: 24px 48px;
             border-radius: 48px;
             border: 3px solid;
@@ -132,7 +130,7 @@ form {
 @media (max-width: 768px) {
 
     form {
-        // width: 100%;
+        padding: 40px 32px;
         gap: 24px;
 
         & div {
@@ -154,15 +152,21 @@ form {
                     display: flex;
                     flex-direction: column;
                 }
-            }
 
+                &_calcResult {
+                    padding: 32px;
+                    border-radius: 32px;
+                    gap: 8px;
+
+                    h1 {
+                        font-size: 12px;
+                    }
+
+                    & h2 {
+                        font-size: 24px;
+                    }
+                }
+            }
         }
     }
-
 }
-
-
-// width: 100%;
-//                 display: flex;
-//                 flex-direction: column;
-//                 gap: 16px;

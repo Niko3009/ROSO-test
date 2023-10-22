@@ -21,6 +21,10 @@ body {
         font-weight: 800;
         line-height: 16px;
     }
+
+    & div {
+        overflow: hidden;
+    }
 }
 
 main {
@@ -123,6 +127,9 @@ button.nav {
 // -------------------------- MOBILE VERSION ----------------------
 
 @media (max-width: 768px) {
+    main {
+        padding: 32px 16px;
+    }
 
     div.title {
         height: 44px;
@@ -130,9 +137,9 @@ button.nav {
 
         & label {
             font-size: 12px;
-            font-weight: 400;
+            font-weight: 800;
         }
-    }
+    } 
 
     button.nav {
         height: 44px;
