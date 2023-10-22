@@ -37,6 +37,13 @@ module.exports = ({ develop }) => ({
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
         test: /\.(?:ico|png|jpg|jpeg|svg)$/i,
         type: 'asset/inline',
       },
