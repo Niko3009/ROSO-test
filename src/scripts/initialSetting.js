@@ -1,4 +1,5 @@
 import calcPayment from './calcPayment'
+import handleForm from './handleForm'
 
 export default function () {
   const location = window.location.pathname
@@ -15,10 +16,18 @@ export default function () {
   }
 
   // Настройка авто-расчета калькулятора
-  if (location === '/index.html') {
+  if (location === '/index.html' || location === '/') {
     calcPayment()
     for (let input of inputs) {
       input.addEventListener('input', calcPayment)
+    }
+  }
+
+  // Настройка авто-проверки формы
+  if (location === '/request.html') {
+    handleForm()
+    for (let input of inputs) {
+      input.addEventListener('input', handleForm)
     }
   }
 

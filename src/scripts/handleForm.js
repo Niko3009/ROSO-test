@@ -1,8 +1,7 @@
-import sendRequest from './sendRequest'
-
-export default async function () {
+export default function () {
   const inputs = {}
   const form = document.querySelector('form')
+  const reqButton = document.querySelector('div.form_buttons>button')
   let errorStatus = false
 
   for (let input of form.querySelectorAll('input')) {
@@ -26,14 +25,7 @@ export default async function () {
   if (!emailRegEx.test(inputs['e-mail'].value)) markError(emailLabel)
   else unmarkError(emailLabel)
 
-  if (!errorStatus) {
-    const data = {}
-    for (let input of form.querySelectorAll('input')) {
-      const name = input.getAttribute('name')
-      data[name] = input.value
-    }
-    sendRequest(data)
-  }
+  reqButton.disabled = errorStatus
 
   function markError(label) {
     errorStatus = true
@@ -43,4 +35,3 @@ export default async function () {
     label.classList.remove('isError')
   }
 }
-

@@ -24,17 +24,10 @@ export default function () {
     }
   }
 
-  if (!errorStatus) {
-    const payment = calcPayment()
-    calcResultString.innerHTML = payment + ' ₽'
-    localStorage.setItem('monthlyPayment', payment)
-    console.log(payment !== '-', payment)
-    reqFormButton.disabled = payment === '-'
-  } else {
-    calcResultString.innerHTML = '- ₽'
-    localStorage.setItem('monthlyPayment', '-')
-    reqFormButton.disabled = true
-  }
+  const payment = !errorStatus ? calcPayment() : 0
+  calcResultString.innerHTML = payment + ' ₽'
+  localStorage.setItem('monthlyPayment', payment)
+  reqFormButton.disabled = !(payment > 0)
 }
 
 function calcPayment() {
@@ -48,19 +41,17 @@ function calcPayment() {
   const creditSize = values['creditSize']
   const initialPayment = values['initialPayment']
   const creditRate = values['creditRate']
+  const monthlyRate = creditRate / 100 / 12
   const creditPeriod = values['creditPeriod']
-
-  const monthlyRate = creditRate / 12
   const creditPeriodInMonth = creditPeriod * 12
 
-  const monthlyPayment =
-    (creditSize - initialPayment) *
-    (((1 + monthlyRate) ** creditPeriodInMonth * monthlyRate) /
-      ((1 + monthlyRate) ** creditPeriodInMonth - 1))
+  let monthlyPayment =
+    ((creditSize - initialPayment) *
+      (1 + monthlyRate) ** creditPeriodInMonth *
+      monthlyRate) /
+    ((1 + monthlyRate) ** creditPeriodInMonth - 1)
 
-  const result = isNaN(monthlyPayment)
-    ? '-'
-    : Math.floor(monthlyPayment * 100) / 100
+  monthlyPayment = Math.floor(monthlyPayment * 100) / 100
 
-  return result
+  return !!monthlyPayment ? monthlyPayment : 0
 }
