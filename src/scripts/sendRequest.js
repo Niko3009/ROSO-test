@@ -1,11 +1,8 @@
 export default async function () {
   const data = {}
-  const form = document.querySelector('form')
-  const inputs = form.querySelectorAll('input')
-  for (let input of inputs) {
-    const name = input.getAttribute('name')
-    data[name] = input.value
-  }
+  Object.keys(localStorage).forEach((key) => {
+    data[key] = localStorage.getItem(key)
+  })
 
   const sendMessage = fetch(` http://localhost/request`, {
     method: 'post',
