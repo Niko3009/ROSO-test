@@ -14,7 +14,7 @@ window.sendRequest = sendRequest
 document.addEventListener('DOMContentLoaded', () => {
   setInitialSettings()
 
-  if (location === '/request.html' && !monthlyPayment) {
+  if (location === '/request.html' && !(monthlyPayment > 0)) {
     window.location.href = 'index.html'
   }
 })
